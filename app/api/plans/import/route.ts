@@ -4,7 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { MUSCLE_GROUPS, DAYS_OF_WEEK } from "@/lib/types";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
-
+export const dynamic = "force-dynamic";
 export async function POST(req: Request) {
   try {
     const session = await getServerSession(authOptions);
