@@ -1,10 +1,11 @@
+export const dynamic = "force-dynamic";
 import { prisma } from "@/lib/prisma";
 import { getTodayDayName } from "@/lib/dates";
 import { ExerciseLogCard } from "@/components/log/ExerciseLogCard";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { redirect } from "next/navigation";
-export const dynamic = "force-dynamic";
+
 
 export default async function LogPage() {
   const session = await getServerSession(authOptions);

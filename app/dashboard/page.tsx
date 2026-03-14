@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { getWeeklyStats } from "@/lib/stats";
 import { WeeklyProgressRing } from "@/components/dashboard/WeeklyProgressRing";
 import { StreakCard } from "@/components/dashboard/StreakCard";

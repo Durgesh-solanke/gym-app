@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { prisma } from "@/lib/prisma";
 import { getWeekStart } from "@/lib/dates";
 import { LogSummaryCard } from "@/components/history/LogSummaryCard";
