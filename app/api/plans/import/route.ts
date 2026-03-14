@@ -77,7 +77,7 @@ export async function POST(req: Request) {
       }
     }
 
-    for (const [dayName, data] of dayMap.entries()) {
+    for (const [dayName, data] of Array.from(dayMap.entries())) {
       const planDay = await prisma.planDay.create({
         data: { planId: plan.id, dayName, isRestDay: data.isRest },
       });
