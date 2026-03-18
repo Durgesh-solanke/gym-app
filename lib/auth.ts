@@ -27,7 +27,9 @@ export const authOptions: NextAuthOptions = {
         },
       });
 
+
       console.log("AUTH DEBUG:", user); 
+      
 
       if (!user) return null;
 
