@@ -82,3 +82,5 @@ gym-buddy/
 - **Charts**: Recharts
 - **Icons**: Lucide React
 - **Hosting**: Vercel
+
+this is final version deploy by durgesh 
