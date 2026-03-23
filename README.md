@@ -84,3 +84,4 @@ gym-buddy/
 - **Hosting**: Vercel
 
 this is final version deploy by durgesh 
+the update for the mobile download 2
