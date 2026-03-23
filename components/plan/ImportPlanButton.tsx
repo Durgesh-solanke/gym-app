@@ -61,7 +61,14 @@ export function ImportPlanButton() {
     refWs["!cols"] = [{ wch: 15 }, { wch: 20 }, { wch: 15 }];
     XLSX.utils.book_append_sheet(wb, refWs, "Reference");
 
-    XLSX.writeFile(wb, "gym-buddy-plan-template.xlsx");
+    const wbOut = XLSX.write(wb, { bookType: "xlsx", type: "base64" });
+    const dataUri = `data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,${wbOut}`;
+    const a = document.createElement("a");
+    a.href = dataUri;
+    a.download = "gym-buddy-plan-template.xlsx";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
   };
 
   const handleFile = async (file: File) => {
