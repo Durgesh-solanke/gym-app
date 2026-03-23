@@ -14,6 +14,8 @@ export function ImportPlanButton() {
 
   const downloadTemplate = () => {
     window.location.href = "/api/plans/template";
+    setResult({ ok: true, message: "Template downloaded! Check your downloads folder." });
+    setTimeout(() => setResult(null), 3000);
   };
 
   const handleFile = async (file: File) => {
