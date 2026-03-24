@@ -81,9 +81,11 @@ gym-buddy/
 - **Styling**: Tailwind CSS
 - **Charts**: Recharts
 - **Icons**: Lucide React
+
+
 - **Hosting**: Vercel
 
 this is final version deploy by durgesh 
 the update for the mobile download 2
 third ttest for download
-
+fourth time previous data ...
