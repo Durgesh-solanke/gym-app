@@ -32,19 +32,19 @@ export function SetRow({ set, onUpdated, onDeleted }: Props) {
   };
 
   return (
-    <div className="flex items-center gap-2 text-sm">
-      <span className="w-6 text-gray-400 text-xs shrink-0">#{set.setNumber}</span>
-      <div className="flex items-center gap-1 bg-gray-50 border border-gray-200 rounded-lg px-2 py-2">
+    <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm">
+      <span className="w-5 sm:w-6 text-gray-400 text-[10px] sm:text-xs shrink-0">#{set.setNumber}</span>
+      <div className="flex items-center gap-1 bg-gray-50 border border-gray-200 rounded-lg px-1.5 sm:px-2 py-1.5 sm:py-2">
         <input
           type="number"
           value={reps}
           onChange={(e) => setReps(e.target.value)}
           onBlur={handleBlur}
-          className="w-14 bg-transparent text-center outline-none text-gray-800 text-base"
+          className="w-10 sm:w-14 bg-transparent text-center outline-none text-gray-800 text-sm sm:text-base"
           min={1}
           inputMode="numeric"
         />
-        <span className="text-gray-400 text-xs">reps</span>
+        <span className="text-gray-400 text-[10px] sm:text-xs">reps</span>
       </div>
       <input
         type="text"
@@ -52,14 +52,14 @@ export function SetRow({ set, onUpdated, onDeleted }: Props) {
         onChange={(e) => setNote(e.target.value)}
         onBlur={handleBlur}
         placeholder="note..."
-        className="flex-1 text-xs bg-gray-50 border border-gray-200 rounded-lg px-2 py-2 outline-none text-gray-600 placeholder:text-gray-300"
+        className="flex-1 text-[10px] sm:text-xs bg-gray-50 border border-gray-200 rounded-lg px-1.5 sm:px-2 py-1.5 sm:py-2 outline-none text-gray-600 placeholder:text-gray-300"
       />
-      {saving && <span className="text-xs text-gray-300">saving...</span>}
+      {saving && <span className="text-[10px] sm:text-xs text-gray-300 hidden sm:inline">saving...</span>}
       <button
         onClick={handleDelete}
-        className="text-gray-300 hover:text-red-400 transition-colors p-1"
+        className="text-gray-300 hover:text-red-400 transition-colors p-0.5 sm:p-1"
       >
-        <Trash2 size={16} />
+        <Trash2 size={14} className="sm:w-4 sm:h-4" />
       </button>
     </div>
   );

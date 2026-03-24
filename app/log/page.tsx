@@ -73,8 +73,8 @@ export default async function LogPage() {
   }
 
   return (
-    <div className="max-w-2xl mx-auto space-y-4">
-      <p className="text-sm text-gray-400">
+    <div className="max-w-2xl mx-auto space-y-3 sm:space-y-4 px-3 sm:px-4">
+      <p className="text-xs sm:text-sm text-gray-400">
         {todayName} &middot; {activePlan.name}
       </p>
       {planExercises.map((pde) => (
