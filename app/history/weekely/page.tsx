@@ -91,7 +91,8 @@ export default async function WeeklyHistoryPage() {
                                             <p className="text-sm text-gray-400 italic">No exercises logged.</p>
                                         )}
                                     </div>
-
+                                    {/*  */}
+                                    {/* {this isthe comment } */}
                                     {missedExercises.length > 0 && (
                                         <div className="pt-2">
                                             <h3 className="text-sm font-medium text-gray-700 flex items-center gap-2 mb-2">
