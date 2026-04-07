@@ -8,6 +8,7 @@ interface Props {
   exerciseId: string;
   nextSetNumber: number;
   onAdded: (set: WorkoutSet) => void;
+  defaultReps?: number;
 }
 
 export function AddSetButton({
@@ -15,6 +16,7 @@ export function AddSetButton({
   exerciseId,
   nextSetNumber,
   onAdded,
+  defaultReps = 10,
 }: Props) {
   const [loading, setLoading] = useState(false);
 
@@ -27,7 +29,7 @@ export function AddSetButton({
         logId,
         exerciseId,
         setNumber: nextSetNumber,
-        reps: 10,
+        reps: defaultReps,
       }),
     });
     if (res.ok) onAdded(await res.json());
@@ -38,9 +40,9 @@ export function AddSetButton({
     <button
       onClick={handleAdd}
       disabled={loading}
-      className="flex items-center gap-1.5 text-sm text-violet-600 hover:text-violet-800 transition-colors disabled:opacity-50"
+      className="flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs text-violet-600 hover:text-violet-800 transition-colors disabled:opacity-50"
     >
-      <Plus size={16} /> Add set
+      <Plus size={12} className="sm:w-[14px] sm:h-[14px]" /> Add extra set
     </button>
   );
 }

@@ -7,12 +7,25 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Role {
+  USER
+  ADMIN
+}
+
+enum UserStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
 model User {
   id        String     @id @default(cuid())
   email     String     @unique
   password  String
   name      String?
   createdAt DateTime   @default(now())
+  role      Role       @default(USER)
+  status    UserStatus @default(PENDING)
   plans     Plan[]
   exercises Exercise[]
 }

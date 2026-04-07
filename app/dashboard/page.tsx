@@ -3,7 +3,7 @@ import { getWeeklyStats } from "@/lib/stats";
 import { WeeklyProgressRing } from "@/components/dashboard/WeeklyProgressRing";
 import { StreakCard } from "@/components/dashboard/StreakCard";
 import { TodayPreview } from "@/components/dashboard/TodayPreview";
-import { DailyProgressBar } from "@/components/dashboard/DailyProgressBar";
+import { DailyProgressCard } from "@/components/dashboard/DailyProgressCard";
 import { prisma } from "@/lib/prisma";
 import { getTodayDayName } from "@/lib/dates";
 import { getServerSession } from "next-auth";
@@ -64,22 +64,22 @@ export default async function DashboardPage() {
 
   return (
     <div className="max-w-4xl mx-auto space-y-4">
-      <DailyProgressBar
-        percent={dailyPercent}
-        done={totalDoneToday}
-        planned={totalPlannedToday}
-        todayName={todayName}
-        isRestDay={isRestDay}
-      />
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <StreakCard streak={stats.streak} />
+        <DailyProgressCard
+          percent={dailyPercent}
+          done={totalDoneToday}
+          planned={totalPlannedToday}
+          todayName={todayName}
+          isRestDay={isRestDay}
+        />
         <WeeklyProgressRing
           percent={stats.weeklyPercent}
           done={stats.totalDone}
           planned={stats.totalPlanned}
         />
-        <StreakCard streak={stats.streak} />
-        <TodayPreview exercises={todayExercises} todayName={todayName} />
       </div>
+      <TodayPreview exercises={todayExercises} todayName={todayName} />
     </div>
   );
 }
