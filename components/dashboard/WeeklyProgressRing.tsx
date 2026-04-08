@@ -15,7 +15,7 @@ export function WeeklyProgressRing({ percent, done, planned }: Props) {
   const dash = (percent / 100) * circ;
 
   return (
-    <Link href="/history/weekly" className="block transition-transform hover:scale-[1.02]">
+    <Link href="/weekly?mode=week&offset=0" className="block transition-transform hover:scale-[1.02]">
       <div className="bg-white rounded-2xl border border-gray-100 p-5 flex flex-row lg:flex-col items-center gap-4 lg:gap-3 relative">
         <svg width="80" height="80" viewBox="0 0 96 96" className="shrink-0">
           <circle cx="48" cy="48" r={r} fill="none" stroke="#f3f4f6" strokeWidth="8" />
